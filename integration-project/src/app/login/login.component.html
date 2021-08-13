@@ -1,0 +1,9 @@
+<div *ngIf="status" class="alert alert-danger">
+    Login Failed! Please try again!
+</div>
+<form [formGroup]="loginForm" class="container-fluid">
+    User Name: <input type="text" name="" id="" formControlName="username" class="form-control">
+    Password: <input type="password" name="" id="" formControlName="password" class="form-control"><br>
+    <input type="button" value="Login" class="btn btn-success" (click)="fnLogin()">&nbsp;
+    <input type="reset" value="Reset" class="btn btn-warning">
+</form>

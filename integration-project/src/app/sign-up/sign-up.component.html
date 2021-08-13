@@ -1,0 +1,49 @@
+<div *ngIf="status!=''" class="alert alert-danger">
+    {{status}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+<form [formGroup]="signupForm" class="container-fluid">
+    User Name: <input type="text" name="" id="" formControlName="username" class="form-control">
+    First Name: <input type="text" name="" id="" formControlName="firstName" class="form-control">
+    Last Name: <input type="text" name="" id="" formControlName="lastName" class="form-control">
+    Password: <input type="password" name="" id="" formControlName="password" class="form-control">
+    Confirm Password: <input type="password" name="" id="" formControlName="cpassword" class="form-control">
+    Date Of Birth: <input type="date" name="" id="" formControlName="dateOfBirth" class="form-control">
+    Email: <input type="email" name="" id="" formControlName="email" class="form-control">
+    Pic: <input type="file" name="" id="" formControlName="pic" class="form-control" (change)="fnFileChanged($event)">
+    <br>
+    <input type="button" value="Submit" class="btn btn-success" (click)="fnSignUp()">&nbsp;
+    <input type="reset" value="Reset" class="btn btn-warning">
+</form>
+{{signupForm.value | json}}
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <th>User Name</th>
+        <th>First Name</th>
+        <th>Date of Birth</th>
+        <th>Picture</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.username}}</td>
+            <td>{{u.firstName}}</td>
+            <td>{{u.dateOfBirth}}</td>
+            <td>
+                <img width="100" [src]="'data:image/png;base64,'+u.pic" alt="">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
